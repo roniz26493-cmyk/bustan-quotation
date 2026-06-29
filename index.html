@@ -28,14 +28,8 @@
     margin-bottom: 24px;
   }
 
-  .logo-wrap {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .logo-wrap img {
-    width: 110px;
-  }
+  .logo-wrap { text-align: center; margin-bottom: 20px; }
+  .logo-wrap img { width: 110px; }
 
   h1 {
     text-align: center;
@@ -53,7 +47,7 @@
     margin-top: 16px;
   }
 
-  input[type="text"], input[type="date"] {
+  input[type="text"] {
     width: 100%;
     padding: 10px 12px;
     border: 1.5px solid #d0c0b0;
@@ -67,9 +61,7 @@
     transition: border-color 0.2s;
   }
 
-  input:focus {
-    border-color: #8B0000;
-  }
+  input:focus { border-color: #8B0000; }
 
   button {
     display: block;
@@ -83,125 +75,78 @@
     font-size: 1.05rem;
     font-family: inherit;
     cursor: pointer;
-    letter-spacing: 0.03em;
     transition: background 0.2s;
   }
 
   button:hover { background: #a30000; }
 
-  /* ===== PREVIEW (A4-like) ===== */
-  .preview-wrap {
-    max-width: 700px;
-    width: 100%;
-    display: none;
-  }
-
-  .preview-label {
-    font-size: 0.88rem;
-    color: #888;
-    text-align: center;
-    margin-bottom: 8px;
-  }
+  .preview-wrap { max-width: 700px; width: 100%; display: none; }
+  .preview-label { font-size: 0.88rem; color: #888; text-align: center; margin-bottom: 8px; }
 
   .pdf-page {
     background: white;
     width: 100%;
-    padding: 48px 56px;
+    padding: 32px 44px;
     border-radius: 8px;
     box-shadow: 0 2px 20px rgba(0,0,0,0.12);
     direction: rtl;
     font-family: 'David', 'Arial Hebrew', Arial, sans-serif;
-    position: relative;
   }
 
-  .pdf-date-row {
-    text-align: right;
-    font-size: 0.97rem;
-    color: #333;
-    margin-bottom: 4px;
-  }
+  .pdf-date-row { text-align: right; font-size: 0.9rem; color: #333; margin-bottom: 4px; }
+  .pdf-logo-row { text-align: center; margin: 6px 0 12px; }
+  .pdf-logo-row img { width: 100px; }
 
-  .pdf-logo-row {
-    text-align: center;
-    margin: 10px 0 18px;
-  }
-
-  .pdf-logo-row img { width: 120px; }
-
-  .pdf-rule {
-    border: none;
-    border-top: 2px solid #8B0000;
-    margin: 0 0 28px;
-  }
+  .pdf-rule { border: none; border-top: 2px solid #8B0000; margin: 0 0 18px; }
 
   .pdf-title {
     text-align: center;
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #222;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
   }
 
-  .pdf-to {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 22px;
-    line-height: 1.7;
-  }
+  .pdf-to { font-size: 0.95rem; color: #333; margin-bottom: 14px; line-height: 1.6; }
 
-  .pdf-to strong { font-size: 1.03rem; }
+  .pdf-body { font-size: 0.95rem; color: #333; line-height: 1.7; margin-bottom: 18px; }
 
-  .pdf-body {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 28px;
-  }
+  .pdf-table-wrap { display: flex; justify-content: center; margin-bottom: 20px; }
 
-  .pdf-table-wrap {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 32px;
-  }
-
-  table {
-    border-collapse: collapse;
-    min-width: 280px;
-  }
-
-  th, td {
-    border: 1.5px solid #555;
-    padding: 9px 20px;
-    text-align: right;
-    font-size: 0.98rem;
-  }
-
+  table { border-collapse: collapse; min-width: 260px; }
+  th, td { border: 1.5px solid #555; padding: 7px 18px; text-align: right; font-size: 0.93rem; }
   th { background: #f0ebe4; font-weight: bold; }
 
-  .pdf-sign {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.9;
-  }
+  .pdf-sign { font-size: 0.95rem; color: #333; line-height: 1.8; }
 
-  .pdf-footer-rule {
-    border: none;
-    border-top: 2px solid #8B0000;
-    margin: 36px 0 10px;
-  }
+  .pdf-footer-rule { border: none; border-top: 2px solid #8B0000; margin: 22px 0 8px; }
+  .pdf-footer { text-align: center; font-size: 0.83rem; color: #555; }
 
-  .pdf-footer {
-    text-align: center;
-    font-size: 0.88rem;
-    color: #555;
-  }
-
-  .btn-print {
-    margin-top: 16px;
-    background: #2e7d32;
-  }
-
+  .btn-print { margin-top: 16px; background: #2e7d32; }
   .btn-print:hover { background: #388e3c; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .form-card { display: none; }
+    .preview-label { display: none; }
+    .btn-print { display: none; }
+    .preview-wrap { display: block !important; max-width: 100%; }
+    .pdf-page {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 20px 40px;
+      font-size: 0.88rem;
+    }
+    .pdf-title { font-size: 1.15rem; margin-bottom: 12px; }
+    .pdf-logo-row img { width: 85px; }
+    .pdf-rule { margin-bottom: 12px; }
+    .pdf-to { margin-bottom: 10px; }
+    .pdf-body { margin-bottom: 12px; line-height: 1.55; }
+    .pdf-table-wrap { margin-bottom: 14px; }
+    .pdf-sign { line-height: 1.6; }
+    .pdf-footer-rule { margin: 16px 0 6px; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
 </style>
 </head>
 <body>
@@ -221,7 +166,6 @@
   <button onclick="generate()">צור הצעת מחיר</button>
 </div>
 
-<!-- Preview -->
 <div class="preview-wrap" id="preview-wrap">
   <p class="preview-label">תצוגה מקדימה — לחץ הדפס לשמירה כ-PDF</p>
   <div class="pdf-page" id="pdf-page">
@@ -239,7 +183,7 @@
     <p class="pdf-body">
       להלן הצעת מחיר עבור ביקור קבוצתי בבוסתן של מוטי.<br><br>
       במסגרת הביקור יוכלו המשתתפים לקטוף ולאכול במקום פירות עונה מגוונים: דובדבנים, תותי עץ, פטל, אוסנה ואוכמניות.<br><br>
-      האתר מציע פינות ישיבה מוצלות, חניה מסודרת, ומגוון מוצרים מהגליל והגולן.
+      האתר מציע פינות ישיבה מוצלות, שירותים, חניה מסודרת, ומגוון מוצרים מהגליל והגולן.
     </p>
     <div class="pdf-table-wrap">
       <table>
@@ -267,17 +211,6 @@ function generate() {
   document.getElementById('preview-wrap').scrollIntoView({behavior:'smooth'});
 }
 </script>
-
-<style>
-@media print {
-  body { background: white; padding: 0; }
-  .form-card { display: none; }
-  .preview-label { display: none; }
-  .btn-print { display: none; }
-  .preview-wrap { display: block !important; max-width: 100%; }
-  .pdf-page { box-shadow: none; border-radius: 0; padding: 40px 50px; }
-}
-</style>
 
 </body>
 </html>
